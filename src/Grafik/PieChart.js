@@ -25,7 +25,7 @@ function getModulValue(modulId, data) {
 
 function countFreq(chartData) {
     const output = [];
-    const AllModulesName = getDistinctModule(chartData);
+    const AllModulesName = getDistinctModule(chartData.filter(item => item.module_type === "MODULE"));
     AllModulesName.map((module) => (
         output.push({ 'module_name': module.data.module_name, 'usage': getModulValue(module.data.module_id, chartData) })
     ));
