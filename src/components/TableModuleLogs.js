@@ -22,7 +22,7 @@ function getDistinctModule(chartData) {
 
 function countFreq(chartData) {
     const output = [];
-    const AllModulesName = getDistinctModule(chartData);
+    const AllModulesName = getDistinctModule(chartData.filter(item => item.module_type === "MODULE"));
     AllModulesName.map((module) => (
         output.push({ 'data': module.data, 'visit': getModulValue(module.data.module_id, chartData) })
     ));
